@@ -1,0 +1,72 @@
+
+save_dir: './work_dirs/recondrive_training'
+seed: 1
+train_epoch: 2
+devices: [0,1,2,3,4,5,6,7]
+
+
+model_cfg:
+  height: 280
+  width: 518
+  render_width_min: 259
+  render_width_max: 768
+  num_cams: 6
+  embed_dim: 1024
+  # freeze_patterns: ['aggregator','lpips']
+  auto_scale_lr: True
+  learning_rate: 0.00001
+  # momentum: 0.9
+  weight_decay: 0.01
+  # scheduler_step_size: 15
+  # scheduler_gamma: 0.1
+  lr_restart_epoch: 5
+  lr_restart_mult: 2
+  lr_min_factor: 0.01
+
+  frame_ids: [0, 1]
+
+  use_vehicle_flow: true
+
+  depth_conf_thr: 0.99
+  min_depth: 1.5
+  max_depth: 110
+  focal_length_scale: 300
+  sh_degree: 4
+
+  save_image_duration: 100
+
+  lambda_project: 1.0
+  lambda_edge: 0.1
+  lambda_depth: 0.001
+  lambda_gaussian: 2
+  lambda_scale: 0.01
+  lambda_opacity: 0.01
+
+  # Model checkpoint paths
+  vggt_checkpoint: 'checkpoints/vggt.pt'
+  sam2_checkpoint: 'checkpoints/sam2.1_hiera_small.pt'  # Relative to SAM2 installation directory
+  sam2_model_cfg: 'configs/sam2.1/sam2.1_hiera_s.yaml'
+  sam2_dir: null  # Set to SAM2 installation directory, or leave null to auto-detect
+
+
+data_cfg:
+  data_path: '/data/datasets/nuscenes/'
+  cache_dir: './work_dirs/cache_data/nuscenes-12HZ'
+  height: 280
+  width: 518
+  back_context: 0
+  forward_context: 0
+  depth_type: 'lidar'
+  # Dataset version and temporal configuration
+  nuscenes_version: 'interp_12Hz_trainval'
+  context_span: 6  # Number of frames in the temporal sequence (0 to 6)
+  cameras: ['CAM_FRONT', 'CAM_FRONT_LEFT', 'CAM_FRONT_RIGHT', 'CAM_BACK_LEFT', 'CAM_BACK_RIGHT', 'CAM_BACK']
+  # gt_ego_pose, gt_depth is not used during training, only for visulization
+  train_requirements: (gt_pose, gt_ego_pose, gt_depth, mask)
+  val_requirements: (gt_pose, gt_ego_pose, gt_depth, mask)
+  
+  batch_size: 2
+  data_shuffle: True
+  drop_last: False
+  num_workers: 4
+  num_epochs: 10

@@ -4,7 +4,7 @@
 </div>
 
 <h3 align="center">
-  <a href="">arXiv</a> |
+  <a href="https://arxiv.org/abs/2603.07552">arXiv</a> |
   <a href="https://github.com/TuojingAI/ReconDrive">Code</a> |
   <a href="https://huggingface.co/TuojingAI/ReconDrive/blob/main/recondrive_stage2.ckpt">Checkpoint</a>
 </h3>
@@ -55,10 +55,10 @@ All assets and code are under the [Apache 2.0 license](./LICENSE) unless specifi
 Please consider citing our paper if the project helps your research with the following BibTex:
 
 ```bibtex
-@inproceedings{yu2024_univ2x,
+@inproceedings{yu2026_recondrive,
  title={ReconDrive: Fast Feed-Forward 4D Gaussian Splatting for Autonomous Driving Scene Reconstruction}, 
  author={Haibao Yu and Kuntao Xiao and Jiahang Wang and Ruiyang Hao and Guoran Hu and Yuxin Huang and Haifang Qin and Bowen Jing and Yuntian Bo and Ping Luo},
- booktitle={Arxiv},
+ booktitle={https://arxiv.org/abs/2603.07552},
  year={2026}
 }
 ```

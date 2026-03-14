@@ -70,4 +70,12 @@ The directory structure should look like:
 
 ---
 
+### 12Hz Interpolated Dataset 
+
+Experiments in this project use an interpolated 12Hz version of nuScenes.  
+We use the version
+released by [Li et al.](https://github.com/Arlo0o/UniScene-Unified-Occupancy-centric-Driving-Scene-Generation).
+
+Please refer to their repository for the dataset preparation instructions to
+generate or download the `interp_12Hz_trainval` data.
 

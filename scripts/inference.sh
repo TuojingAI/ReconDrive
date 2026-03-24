@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CONFIG_PATH='./configs/nuscenes/recondrive.yaml'
-CHECKPOINT_PATH='/data/yuntianbo/ReconDrive/recondrive_stage2.ckpt'
+CHECKPOINT_PATH='./checkpoints/recondrive_stage2.ckpt'
 OUTPUT_DIR='./work_dirs/recondrive_stage2_eval_output'
 
 DEVICE='0'

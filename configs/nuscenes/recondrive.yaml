@@ -50,7 +50,7 @@ model_cfg:
 
 
 data_cfg:
-  data_path: '/data/datasets/nuscenes/'
+  data_path: './data/nuscenes/'
   cache_dir: './work_dirs/cache_data/nuscenes-12HZ'
   height: 280
   width: 518

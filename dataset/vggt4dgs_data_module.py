@@ -4,7 +4,6 @@ from functools import partial
 
 
 from dataset.data_util import train_transforms
-from dataset.vggt3dgs_dataset import NuScenesdataset
 from dataset.vggt4dgs_dataset import NuScenesdataset4D, custom_collate_fn
 from dataset.vggt4dgs_scene_dataset_wrapper import SceneBasedDataset, SceneBatchDataLoader
 

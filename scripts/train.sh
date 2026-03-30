@@ -1,6 +1,6 @@
 #!/bin/bash
 CONFIG_PATH='./configs/nuscenes/recondrive.yaml'
-PRETRAINED_CHECKPOINT_PATH='/data/yuntianbo/ReconDrive/recondrive_stage2.ckpt'
+PRETRAINED_CHECKPOINT_PATH='./checkpoints/recondrive_stage1.ckpt'
 
 python -m scripts.trainer \
     --cfg_path=${CONFIG_PATH} \
